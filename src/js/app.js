@@ -8,9 +8,20 @@ import { login } from './services/auth.service';
 import { notify } from './views/notifications';
 import { getNews } from './services/news.service';
 import { signup } from './sign/signup';
+import {viewSign, viewLogin} from './tabs/tabs';
 
 const { form, inputEmail, inputPassword } = UI;
 const inputs = [inputEmail, inputPassword];
+
+// Tabs
+const getTab = document.getElementById('sign');
+getTab.addEventListener('click', (e) => {
+viewSign();
+});
+const getLogin = document.getElementById('login');
+getLogin.addEventListener('click', (e) => {
+viewLogin();
+});
 
 // Events
 form.addEventListener('submit', e => {

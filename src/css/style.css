@@ -6,6 +6,14 @@
   width: 50%;
 }
 
+.login-tab {
+  display: none;
+}
+
+.sign-tab {
+  display: none;
+}
+
 .login-form-wrap .form-card {
   max-width: 500px;
   width: 100%;
