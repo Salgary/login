@@ -16,8 +16,10 @@
 
 .login-form-wrap .form-card {
   max-width: 500px;
+  max-height: 100%;
   width: 100%;
   margin-right: 30px;
+  overflow-y: scroll;
 }
 
 .login-form-wrap .form-card .card-title {
@@ -28,6 +30,7 @@
   background: var(--teal);
   width: 50%;
   padding: 20px;
+  max-height: 90%;
 }
 
 .login-greeting-screen .login-greeting-screen-text {

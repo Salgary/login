@@ -7,21 +7,16 @@
     <title>Document</title>
   </head>
   <body>
-    <!-- commit Dec 9 -->
+    <!-- Tab interface -->
     <ul class="nav nav-pills">
-      <!-- <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Active</a>
-      </li> -->
       <li class="nav-item">
         <a class="nav-link" id="sign" href="#">SignUP</a>
       </li>
       <li class="nav-item">
         <a class="nav-link active" id="login" href="#">Login</a>
       </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link disabled">Disabled</a>
-      </li> -->
     </ul>
+    <!-- Login-sign-text form -->
     <div class="login-page-wrapp d-flex">
       <div class="login-form-wrap d-flex align-items-center">
         <div class="form-card card ml-auto" id="login-tab-id">
@@ -54,17 +49,17 @@
             </form>
           </div>
         </div>
-        <!-- <div class="login-form-wrap d-flex align-items-center"> -->
+        <!-- SignUp form -->
           <div class="form-card card ml-auto sign-tab" id="sign-tab-id">
             <div class="card-body">
               <h4 class="card-title">SignUP</h4>
-              <form name="loginForm">
+              <form name="signForm">
                 <div class="form-group">
                   <label for="email">Email address</label>
                   <input
                     type="email"
                     class="form-control"
-                    id="auth-email"
+                    id="sign-email"
                     aria-describedby="emailHelp"
                     placeholder="Enter email"
                     data-required="email"
@@ -76,7 +71,7 @@
                   <input
                     type="password"
                     class="form-control"
-                    id="auth-password"
+                    id="sign-password"
                     placeholder="Password"
                     data-required="password"
                   />
@@ -111,10 +106,10 @@
                     data-required="last_name"
                   />
                 </div>
-                <!-- <div class="form-group">
+                <div class="form-group">
                   <label for="phone">Phone</label>
                   <input
-                    type="text"
+                    type="number"
                     class="form-control"
                     id="phone"
                     placeholder="Enter Phone"
@@ -152,34 +147,42 @@
                   />
                 </div>
                 <div class="form-group">
-                  <label for="phone gender_orientation">Phone</label>
+                  <label for="date_of_birth_day">date_of_birth_day</label>
                   <input
-                    type="text"
+                    type="number"
                     class="form-control"
-                    id="phone"
-                    placeholder="Enter Phone"
+                    id="date_of_birth_day"
+                    placeholder="Enter date_of_birth_day"
                     data-required="phone"
                   />
                 </div>
                 <div class="form-group">
-                  <label for="phone gender_orientation">Phone</label>
+                  <label for="date_of_birth_month">date_of_birth_month</label>
                   <input
-                    type="text"
+                    type="number"
                     class="form-control"
-                    id="phone"
-                    placeholder="Enter Phone"
+                    id="date_of_birth_month"
+                    placeholder="Enter date_of_birth_month"
                     data-required="phone"
                   />
-                </div> -->
-                <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <div class="form-group">
+                  <label for="date_of_birth_year">date_of_birth_year</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="date_of_birth_year"
+                    placeholder="Enter date_of_birth_year"
+                    data-required="phone"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
               </form>
             </div>
           </div>
-        <!-- </div> -->
-      
-        <!-- /.auth-form-wrap  -->
       </div>
-      <!-- /.login-form-wrap -->
+      
+      <!-- Text area -->
       <div class="login-greeting-screen d-flex align-items-center">
         <div class="login-greeting-screen-text">
           <h1 class="login-greeting-screen-title">Welcome to my app</h1>
@@ -187,7 +190,7 @@
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores
             inventore non accusantium earum, illo dolores reprehenderit laborum
             ratione quos doloribus repellat eligendi deleniti. Ipsum voluptate
-            ipsa exercitationem eaque totam. A.
+            ipsa exercitationem eaque totam.
           </p>
         </div>
       </div>

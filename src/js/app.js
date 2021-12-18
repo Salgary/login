@@ -8,26 +8,35 @@ import { login } from './services/auth.service';
 import { notify } from './views/notifications';
 import { getNews } from './services/news.service';
 import { signup } from './sign/signup';
-import {viewSign, viewLogin} from './tabs/tabs';
+import {elLogin, elSign, viewSign, viewLogin} from './tabs/tabs';
 
-const { form, inputEmail, inputPassword } = UI;
+const { form, inputEmail, inputPassword, inputEmailSign, inputPasswordSign, inputNickname, inputFirstName, inputLastName, inputPhone, inputGender,inputCountry,inputCity, inputBirthDay, inputBirthMonth, inputBirthYear } = UI;
+
 const inputs = [inputEmail, inputPassword];
 
+const inputsSign = [inputEmailSign, inputPasswordSign, inputNickname, inputFirstName, inputLastName, inputPhone, inputGender, inputCity, inputCountry, inputBirthDay, inputBirthMonth, inputBirthYear];
+
 // Tabs
-const getTab = document.getElementById('sign');
-getTab.addEventListener('click', (e) => {
+elSign.addEventListener('click', (e) => {
 viewSign();
 });
-const getLogin = document.getElementById('login');
-getLogin.addEventListener('click', (e) => {
+
+elLogin.addEventListener('click', (e) => {
 viewLogin();
 });
 
-// Events
+// Events document.forms['loginForm']
 form.addEventListener('submit', e => {
   e.preventDefault();
   onSubmit();
 });
+
+document.forms.signForm.addEventListener('submit', e => {
+  e.preventDefault();
+  onSignSubmit();
+  console.log('onSignSubmit run');
+});
+
 inputs.forEach(el => el.addEventListener('focus', () => removeInputError(el)));
 
 // Sign Up
@@ -51,6 +60,31 @@ async function onSubmit() {
     form.reset();
     notify({ msg: 'Login success', className: 'alert-success' });
   } catch (err) {
-    notify({ mas: 'Login faild', className: 'alert-danger' });
+    notify({ mes: 'Login failed', className: 'alert-danger' });
+  }
+}
+
+// Handler for Sign
+async function onSignSubmit() {
+  const isValidForm = inputsSign.every(el => {
+    const isValidInput = validate(el);
+    if (!isValidInput) {
+      showInputError(el);
+    }
+    console.log(el)
+    return isValidInput;
+  });
+  console.log(isValidForm);
+  if (!isValidForm) return;
+
+  try {
+    await signup(inputEmailSign.value, inputPasswordSign.value, inputNickname.value, inputFirstName.value, inputLastName.value, inputPhone.value, inputGender.value, inputCity.value, inputCountry.value, inputBirthDay.value, inputBirthMonth.value, inputBirthYear.value);
+    // await getNews();
+    // form.reset();
+    console.log(inputEmailSign.value);
+    console.log(inputPasswordSign.value);
+    notify({ msg: 'Sign success', className: 'alert-success' });
+  } catch (err) {
+    notify({ mes: 'Sign failed', className: 'alert-danger' });
   }
 }
