@@ -9,6 +9,7 @@ import { notify } from './views/notifications';
 import { getNews } from './services/news.service';
 import { signup } from './sign/signup';
 import {elLogin, elSign, viewSign, viewLogin} from './tabs/tabs';
+import { autocomplete, countries } from './autocomplete/autocomplete';
 
 const { form, inputEmail, inputPassword, inputEmailSign, inputPasswordSign, inputNickname, inputFirstName, inputLastName, inputPhone, inputGender,inputCountry,inputCity, inputBirthDay, inputBirthMonth, inputBirthYear } = UI;
 
@@ -39,8 +40,6 @@ document.forms.signForm.addEventListener('submit', e => {
 
 inputs.forEach(el => el.addEventListener('focus', () => removeInputError(el)));
 
-// Sign Up
-// signup();
 
 // Handlers
 async function onSubmit() {
@@ -88,3 +87,6 @@ async function onSignSubmit() {
     notify({ mes: 'Sign failed', className: 'alert-danger' });
   }
 }
+
+// Autocomplete city, country
+autocomplete(document.getElementById("country"), countries);
