@@ -10,6 +10,6 @@ const instance = axios.create({
 });
 
 interceptors(instance);
-console.log('this in plugins index js');
+console.log('this is plugins index js');
 
 export default instance;

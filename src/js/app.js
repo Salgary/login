@@ -9,7 +9,8 @@ import { notify } from './views/notifications';
 import { getNews } from './services/news.service';
 import { signup } from './sign/signup';
 import {elLogin, elSign, viewSign, viewLogin} from './tabs/tabs';
-import { autocomplete, countries } from './autocomplete/autocomplete';
+import { autocomplete, countries, cities } from './autocomplete/autocomplete';
+import { getCountries, countries2 } from './autocomplete/get.country';
 
 const { form, inputEmail, inputPassword, inputEmailSign, inputPasswordSign, inputNickname, inputFirstName, inputLastName, inputPhone, inputGender,inputCountry,inputCity, inputBirthDay, inputBirthMonth, inputBirthYear } = UI;
 
@@ -89,4 +90,11 @@ async function onSignSubmit() {
 }
 
 // Autocomplete city, country
-autocomplete(document.getElementById("country"), countries);
+async function createAutocomplete() {
+  let countryArr = await getCountries();
+autocomplete(document.getElementById("country"), countryArr);
+};
+
+autocomplete(document.getElementById("city"), cities);
+
+createAutocomplete();
