@@ -79,8 +79,6 @@ async function onSignSubmit() {
 
   try {
     await signup(inputEmailSign.value, inputPasswordSign.value, inputNickname.value, inputFirstName.value, inputLastName.value, inputPhone.value, inputGender.value, inputCity.value, inputCountry.value, inputBirthDay.value, inputBirthMonth.value, inputBirthYear.value);
-    // await getNews();
-    // form.reset();
     console.log(inputEmailSign.value);
     console.log(inputPasswordSign.value);
     notify({ msg: 'Sign success', className: 'alert-success' });
