@@ -9,8 +9,8 @@ import { notify } from './views/notifications';
 import { getNews } from './services/news.service';
 import { signup } from './sign/signup';
 import {elLogin, elSign, viewSign, viewLogin} from './tabs/tabs';
-import { autocomplete, countries, cities } from './autocomplete/autocomplete';
-import { getCountries, countries2 } from './autocomplete/get.country';
+import { getCountries, getCities } from './autocomplete/get.country';
+import { createAutocompleteJQ } from './autocomplete/jq.autocomplete';
 
 const { form, inputEmail, inputPassword, inputEmailSign, inputPasswordSign, inputNickname, inputFirstName, inputLastName, inputPhone, inputGender,inputCountry,inputCity, inputBirthDay, inputBirthMonth, inputBirthYear } = UI;
 
@@ -89,12 +89,22 @@ async function onSignSubmit() {
   }
 }
 
+
+
 // Autocomplete city, country
-async function createAutocomplete() {
-  let countryArr = await getCountries();
-autocomplete(document.getElementById("country"), countryArr);
-};
-
-autocomplete(document.getElementById("city"), cities);
-
-createAutocomplete();
+(async function createAutocomplete() {
+  let countryArr2 = await getCountries();
+  createAutocompleteJQ(await getCountries(), '#country');
+  $('#country').on( "autocompleteselect", function( event, ui ) {
+    let valueCountry = ui.item.label;
+    let indexCountry = countryArr2.indexOf(valueCountry);
+    indexCountry = ++indexCountry;
+    console.log(indexCountry);
+    var reqRoute = `/location/get-cities/${indexCountry}`;
+    console.log(reqRoute);
+    (async function () {
+      createAutocompleteJQ(await getCities(reqRoute), '#city');
+    })();
+  });
+}
+)();

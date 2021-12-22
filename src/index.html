@@ -2,9 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/themes/sunny/jquery-ui.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Sign&Auth</title>
   </head>
   <body>
     <!-- Tab interface -->
@@ -51,7 +54,7 @@
         </div>
         <!-- SignUp form -->
           <div class="form-card card ml-auto sign-tab" id="sign-tab-id">
-            <div class="card-body">
+            <div class="card-body color-body">
               <h4 class="card-title">SignUP</h4>
               <form name="signForm" autocomplete="off">
                 <div class="form-group">
@@ -92,7 +95,7 @@
                     type="text"
                     class="form-control"
                     id="first_name"
-                    placeholder="first_name"
+                    placeholder="Enter First name"
                     data-required="first_name"
                   />
                 </div>
@@ -102,7 +105,7 @@
                     type="text"
                     class="form-control"
                     id="last_name"
-                    placeholder="last_name"
+                    placeholder="Enter Last name"
                     data-required="last_name"
                   />
                 </div>
@@ -137,7 +140,7 @@
                     data-required="country"
                   />
                 </div>
-                <div class="form-group autocomplete">
+                <div class="form-group autocomplete ui-widget">
                   <label for="city">City</label>
                   <input
                     type="text"
@@ -146,6 +149,7 @@
                     placeholder="Enter city"
                     data-required="city"
                   />
+                  <span id="cityLabel"></span> 
                 </div>
                 <div class="form-group">
                   <label for="date_of_birth_day">date_of_birth_day</label>
@@ -153,8 +157,8 @@
                     type="number"
                     class="form-control"
                     id="date_of_birth_day"
-                    placeholder="Enter date_of_birth_day"
-                    data-required="phone"
+                    placeholder="Enter date of birth day"
+                    data-required="number"
                   />
                 </div>
                 <div class="form-group">
@@ -163,8 +167,8 @@
                     type="number"
                     class="form-control"
                     id="date_of_birth_month"
-                    placeholder="Enter date_of_birth_month"
-                    data-required="phone"
+                    placeholder="Enter date of birth month"
+                    data-required="number"
                   />
                 </div>
                 <div class="form-group">
@@ -173,8 +177,8 @@
                     type="number"
                     class="form-control"
                     id="date_of_birth_year"
-                    placeholder="Enter date_of_birth_year"
-                    data-required="phone"
+                    placeholder="Enter date of birth year"
+                    data-required="number"
                   />
                 </div>
                 <button type="submit" class="btn btn-primary">Register</button>
@@ -186,7 +190,7 @@
       <!-- Text area -->
       <div class="login-greeting-screen d-flex align-items-center">
         <div class="login-greeting-screen-text">
-          <h1 class="login-greeting-screen-title">Welcome to my app</h1>
+          <h1 class="login-greeting-screen-title">Welcome to Sign/Login app</h1>
           <p class="login-greeting-screen-description">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores
             inventore non accusantium earum, illo dolores reprehenderit laborum

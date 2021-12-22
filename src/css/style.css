@@ -1,9 +1,11 @@
 .login-page-wrapp {
   height: 100vh;
+  background-color: black;
 }
 
 .login-form-wrap {
   width: 50%;
+  background-color: black;
 }
 
 .login-tab {
@@ -19,7 +21,7 @@
   max-height: 100%;
   width: 100%;
   margin-right: 30px;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 .login-form-wrap .form-card .card-title {
@@ -30,7 +32,8 @@
   background: var(--teal);
   width: 50%;
   padding: 20px;
-  max-height: 90%;
+  max-height: 99%;
+  background-color: darkolivegreen ;
 }
 
 .login-greeting-screen .login-greeting-screen-text {
@@ -38,7 +41,7 @@
 }
 
 .login-greeting-screen .login-greeting-screen-text {
-  color: var(--white);
+  color: burlywood;
 }
 
 .login-greeting-screen .login-greeting-screen-title {
@@ -82,4 +85,23 @@
 .autocomplete-active {
   background-color: DodgerBlue !important; 
   color: #ffffff; 
+}
+
+#cityLabel {
+  display: block;
+}
+
+.form-card {
+  background-color: darkolivegreen;
+}
+
+.form-control {
+  background-color: black;
+}
+.color-body {
+  overflow-y: scroll;
+}
+
+.nav {
+  background-color: black;
 }
